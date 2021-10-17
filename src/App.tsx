@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { getQuestions } from "./api";
+import { IQuestionObject, IAnswerObject } from './components/propsType';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [step, setStep] = useState(0);
+  const [question, setQuestions] = useState<IQuestionObject[]>();
+
+  useEffect(() => {
+    loadQuestions();
+  }, []);
+
+  const loadQuestions = async () => {
+    const questions = await getQuestions();
+    console.log('questions: ', questions);
+
+    setQuestions(questions);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      this is on dev.
     </div>
   );
-}
+};
 
 export default App;
