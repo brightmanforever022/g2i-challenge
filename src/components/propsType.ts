@@ -5,6 +5,7 @@ export interface IQuestionObject {
   question: string,
   correct_answer: string,
   incorrect_answers: any[],
+  isCorrect?: boolean,
 }
 
 export interface IAnswerObject {

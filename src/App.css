@@ -1,38 +1,70 @@
-.App {
+p {
+  overflow-wrap: break-word;
+}
+.container {
+  width: 300px;
+  margin: 0 auto;
+  padding: 0 5rem;
   text-align: center;
+  font-size: 24px;
+  font-weight: 400;
+  background-color: #e0e0e0;
+}
+.home-container p {
+  padding-bottom: 100px;
+}
+.header-title {
+  font-weight: 700;
+  padding: 20px 50px 100px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.start-link {
+  display: block;
+  padding-bottom: 30px;
+  text-decoration: none;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start-link:hover {
+  font-size: 26px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.quiz-container {
+  padding-bottom: 150px;
+}
+.card-container {
+  border: 1px solid #333;
+  padding: 20px;
+}
+.card-container p {
+  margin-bottom: 100px;
+}
+.card-container label:hover, .container input:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.card-container input {
+  text-align: left;
+  display: inline-block;
+  margin-left: 20px;
+}
+.quiz-number {
+  display: block;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.result-list li {
+  margin-bottom: 20px;
+  text-align: left;
+  color: #828282;
+  list-style-type: "-";
+  padding-inline-start: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.result-list li.active {
+  list-style-type: "+";
+}
+.start-again {
+  display: block;
+  margin-top: 50px;
+  padding-bottom: 50px;
 }

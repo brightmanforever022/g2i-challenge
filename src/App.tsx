@@ -1,26 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { getQuestions } from "./api";
-import { IQuestionObject, IAnswerObject } from './components/propsType';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from "react-router-dom";
+
+import Home from './components/Home';
+import Quiz from './components/Quiz/Index';
 
 const App = () => {
-  const [step, setStep] = useState(0);
-  const [question, setQuestions] = useState<IQuestionObject[]>();
-
-  useEffect(() => {
-    loadQuestions();
-  }, []);
-
-  const loadQuestions = async () => {
-    const questions = await getQuestions();
-    console.log('questions: ', questions);
-
-    setQuestions(questions);
-  }
   return (
-    <div className="App">
-      this is on dev.
-    </div>
+    <Router>
+      <Route path="/" exact component={Home} />
+      <Route path="/quiz" exact component={Quiz} />
+    </Router>
   );
 };
 
