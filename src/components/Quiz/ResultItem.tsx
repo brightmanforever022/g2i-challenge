@@ -6,7 +6,7 @@ interface IResultItemProps {
   title: string,
   isCorrect: boolean | undefined,
 }
-const ResultItem: React.FC<IResultItemProps> = ({ title, isCorrect }) => {
+const ResultItem: React.FC<IResultItemProps> = ({ title, isCorrect }: IResultItemProps) => {
   return (
     <li className={isCorrect ? 'active' : ''}>{he.decode(title).trim()}</li>
   )

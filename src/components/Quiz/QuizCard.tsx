@@ -9,7 +9,7 @@ interface QuizCardProps {
   hitAnswer: Function,
 }
 
-const QuizCard: React.FC<QuizCardProps> = (props) => {
+const QuizCard: React.FC<QuizCardProps> = (props: QuizCardProps) => {
   const { question } = props.quiz
 
   const setAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {

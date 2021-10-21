@@ -6,7 +6,7 @@ import '../../App.css'
 interface IResultProps {
   answers: IQuestionObject[]
 }
-const Result: React.FC<IResultProps> = ({ answers }) => {
+const Result: React.FC<IResultProps> = ({ answers }: IResultProps) => {
   const correctAnswers = answers.filter(answer => answer.isCorrect === true)
   const reloadPage = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault()
