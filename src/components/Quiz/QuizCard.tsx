@@ -1,19 +1,19 @@
-import React from 'react';
+import React from 'react'
+import he from 'he'
 
-import { IQuestionObject } from '../propsType';
-import '../../App.css';
+import { IQuestionObject } from '../propsType'
+import '../../App.css'
 
-const he = require('he');
 interface QuizCardProps {
   quiz: IQuestionObject,
   hitAnswer: Function,
 }
 
 const QuizCard: React.FC<QuizCardProps> = (props) => {
-  const { question } = props.quiz;
+  const { question } = props.quiz
 
   const setAnswer = (event: React.ChangeEvent<HTMLInputElement>) => {
-    props.hitAnswer(event.target.value);
+    props.hitAnswer(event.target.value)
   }
   return (
     <div className='card-container'>
@@ -23,7 +23,7 @@ const QuizCard: React.FC<QuizCardProps> = (props) => {
       <input type="radio" name="quiz-select" value="False" id="select-wrong" onChange={setAnswer} checked={false} />
       <label htmlFor="select-wrong">False</label>
     </div>
-  );
-};
+  )
+}
 
-export default QuizCard;
+export default QuizCard

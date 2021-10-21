@@ -1,15 +1,15 @@
-import React from 'react';
-import '../../App.css';
+import React from 'react'
+import he from 'he'
+import '../../App.css'
 
-const he = require('he');
 interface IResultItemProps {
   title: string,
   isCorrect: boolean | undefined,
 }
-const ResultItem: React.FC<IResultItemProps> = ({title, isCorrect}) => {
+const ResultItem: React.FC<IResultItemProps> = ({ title, isCorrect }) => {
   return (
-    <li className={isCorrect? 'active' : ''}>{he.decode(title).trim()}</li>
-  );
-};
+    <li className={isCorrect ? 'active' : ''}>{he.decode(title).trim()}</li>
+  )
+}
 
-export default ResultItem;
+export default ResultItem

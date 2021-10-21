@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 import {
   BrowserRouter as Router,
   Route
-} from "react-router-dom";
+} from 'react-router-dom'
 
-import Home from './components/Home';
-import Quiz from './components/Quiz/Index';
+import Home from './components/Home'
+import Quiz from './components/Quiz/Index'
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Route path="/" exact component={Home} />
       <Route path="/quiz" exact component={Quiz} />
     </Router>
-  );
-};
+  )
+}
 
-export default App;
+export default App

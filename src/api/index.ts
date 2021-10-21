@@ -1,9 +1,8 @@
-const { URL } = require("../constants");
+import { URL } from '../constants'
 
 export const getQuestions = async () => {
-  return await fetch(URL)
-    .then(response => response.json())
-    .then(data => {
-      return data.results;
-    });
-};
+  const response = await fetch(URL)
+  const questionData = await response.json()
+
+  return questionData.results
+}

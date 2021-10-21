@@ -1,17 +1,16 @@
-import React, { MouseEventHandler } from 'react';
-import { Link } from "react-router-dom";
-import ResultItem from './ResultItem';
-import { IQuestionObject } from '../propsType';
-import '../../App.css';
+import React from 'react'
+import ResultItem from './ResultItem'
+import { IQuestionObject } from '../propsType'
+import '../../App.css'
 
 interface IResultProps {
   answers: IQuestionObject[]
 }
-const Result: React.FC<IResultProps> = ({answers}) => {
+const Result: React.FC<IResultProps> = ({ answers }) => {
   const correctAnswers = answers.filter(answer => answer.isCorrect === true)
   const reloadPage = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault();
-    window.location.reload();
+    e.preventDefault()
+    window.location.reload()
   }
   return (
     <>
@@ -25,10 +24,9 @@ const Result: React.FC<IResultProps> = ({answers}) => {
           />
         )}
       </ul>
-      {/* <Link to={`.`} className='start-link'>PLAY AGAIN?</Link> */}
       <a href="#" className='start-link' onClick={e => reloadPage(e)}>PLAY AGAIN?</a>
     </>
-  );
-};
+  )
+}
 
-export default Result;
+export default Result

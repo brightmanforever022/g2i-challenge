@@ -2,7 +2,7 @@ p {
   overflow-wrap: break-word;
 }
 .container {
-  width: 300px;
+  width: 400px;
   margin: 0 auto;
   padding: 0 5rem;
   text-align: center;
@@ -15,12 +15,16 @@ p {
 }
 .header-title {
   font-weight: 700;
-  padding: 20px 50px 100px;
+  padding: 50px 50px 50px;
+  margin: 0;
+}
+.result-list {
+  margin-bottom: 50px;
 }
 
 .start-link {
   display: block;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   text-decoration: none;
   color: #333;
 }
@@ -30,7 +34,7 @@ p {
 }
 
 .quiz-container {
-  padding-bottom: 150px;
+  padding-bottom: 50px;
 }
 .card-container {
   border: 1px solid #333;
@@ -55,10 +59,11 @@ p {
 
 .result-list li {
   margin-bottom: 20px;
-  text-align: left;
-  color: #828282;
-  list-style-type: "-";
   padding-inline-start: 20px;
+  text-align: left;
+  list-style-type: "-";
+  overflow-wrap: break-word;
+  color: #828282;
 }
 .result-list li.active {
   list-style-type: "+";
