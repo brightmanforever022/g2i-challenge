@@ -1,7 +1,7 @@
 import React from 'react'
 import he from 'he'
 
-import { IQuestionObject } from '../propsType'
+import { IQuestionObject } from '../../types'
 import '../../App.css'
 
 interface QuizCardProps {

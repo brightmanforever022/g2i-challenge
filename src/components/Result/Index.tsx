@@ -1,17 +1,14 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import ResultItem from './ResultItem'
-import { IQuestionObject } from '../propsType'
+import { IQuestionObject } from '../../types'
 import '../../App.css'
 
-interface IResultProps {
-  answers: IQuestionObject[]
-}
-const Result: React.FC<IResultProps> = ({ answers }: IResultProps) => {
+const Result: React.FC = () => {
+  const location = useLocation();
+  const answers = location.state as IQuestionObject[]
   const correctAnswers = answers.filter(answer => answer.isCorrect === true)
-  const reloadPage = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
-    window.location.reload()
-  }
+
   return (
     <>
       <p className='header-title'>You scored <br />{correctAnswers.length} / {answers.length}</p>
@@ -24,7 +21,7 @@ const Result: React.FC<IResultProps> = ({ answers }: IResultProps) => {
           />
         )}
       </ul>
-      <a href="#" className='start-link' onClick={e => reloadPage(e)}>PLAY AGAIN?</a>
+      <a href="/" className='start-link'>PLAY AGAIN?</a>
     </>
   )
 }

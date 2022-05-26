@@ -1,6 +1,6 @@
 {
-  "short_name": "Trivia App",
-  "name": "G2i Code Challenge",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

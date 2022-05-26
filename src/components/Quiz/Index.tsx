@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router"
 import QuizCard from './QuizCard'
-import Result from './Result'
 import { getQuestions } from '../../api'
-import { IQuestionObject } from '../propsType'
+import { IQuestionObject } from '../../types'
 import '../../App.css'
 
 const Quiz = () => {
   const [step, setStep] = useState(0)
   const [questions, setQuestions] = useState<IQuestionObject[]>([])
-  const [resultShow, setResultShow] = useState(false)
+  const navigate = useNavigate();
 
   useEffect(() => {
     loadQuestions()
@@ -25,14 +25,20 @@ const Quiz = () => {
     }
     const nextStep = step + 1
     if (questions?.length === nextStep) {
-      setResultShow(true)
+      navigate(
+        { pathname: '/result' },
+        {
+          state: questions,
+          replace: true
+        }
+      )
     } else {
       setStep(nextStep)
     }
   }
   return (
     <div className='container'>
-      {questions?.length > 0 && !resultShow &&
+      {questions?.length > 0 &&
         <div className='quiz-container'>
           <p className='header-title'>{questions[step].category}</p>
           <QuizCard
@@ -44,7 +50,6 @@ const Quiz = () => {
           </span>
         </div>
       }
-      {resultShow && <Result answers={questions} />}
     </div>
   )
 }
